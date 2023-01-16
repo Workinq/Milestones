@@ -1,0 +1,26 @@
+name: Milestones
+main: kr.kieran.milestones.MilestonesPlugin
+version: ${project.version}
+author: Kieraaaan
+depend: [MassiveCore]
+
+permissions:
+  # -------------------------------------------- #
+  # THE REAL NODES
+  # -------------------------------------------- #
+  milestones.basecommand: {description: use milestones base command, default: false}
+
+  # -------------------------------------------- #
+  # STAR NOTATION
+  # -------------------------------------------- #
+  milestones.*:
+    children:
+      milestones.basecommand: true
+
+  # -------------------------------------------- #
+  # KITS
+  # -------------------------------------------- #
+  milestones.kit.op:
+    default: op
+    children:
+      milestones.*: true
