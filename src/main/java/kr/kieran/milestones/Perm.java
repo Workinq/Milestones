@@ -8,7 +8,7 @@ public enum Perm implements Identified
 {
 
     BASECOMMAND,
-    GIVEDEFAULT,
+    OPEN,
 
     // END OF LIST
     ;

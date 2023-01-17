@@ -5,7 +5,7 @@ import com.massivecraft.massivecore.util.MUtil;
 import kr.kieran.milestones.entity.MConf;
 import kr.kieran.milestones.entity.MConfColl;
 import kr.kieran.milestones.entity.MPlayerColl;
-import kr.kieran.milestones.entity.MilestoneColl;
+import kr.kieran.milestones.entity.MilestoneConfColl;
 
 import java.util.List;
 
@@ -41,7 +41,7 @@ public class MilestonesPlugin extends MassivePlugin
         return MUtil.list(
                 MConfColl.class,
                 MPlayerColl.class,
-                MilestoneColl.class
+                MilestoneConfColl.class
         );
     }
 

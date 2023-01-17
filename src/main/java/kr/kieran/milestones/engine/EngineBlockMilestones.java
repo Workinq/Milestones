@@ -1,11 +1,16 @@
 package kr.kieran.milestones.engine;
 
 import com.massivecraft.massivecore.Engine;
+import kr.kieran.milestones.MilestonesPlugin;
 import kr.kieran.milestones.entity.MPlayer;
+import kr.kieran.milestones.entity.MilestoneConf;
+import kr.kieran.milestones.entity.internal.milestone.MilestoneBlock;
 import kr.kieran.milestones.event.EventMilestonesBlockBreak;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.BlockBreakEvent;
+
+import java.util.Optional;
 
 public class EngineBlockMilestones extends Engine
 {
@@ -36,6 +41,17 @@ public class EngineBlockMilestones extends Engine
 
         // Apply
         mplayer.setTotalBlocksMinedForMaterial(material, newBlocksBroken);
+    }
+
+    @EventHandler
+    public void onMilestoneBlockBreak(EventMilestonesBlockBreak event)
+    {
+        MilestonesPlugin.get().log("EventMilestonesBlockBreak fired");
+        Optional<MilestoneBlock> optionalMilestone = MilestoneConf.get().getNextBlockBreakMilestoneForPlayer(event.getMPlayer(), event.getMinedBlockType());
+        if (!optionalMilestone.isPresent()) return;
+        // TODO: NOT PRESENT EVER
+        MilestoneBlock currentMilestone = optionalMilestone.get();
+        MilestonesPlugin.get().log("currentMilestone:", currentMilestone);
     }
 
 }

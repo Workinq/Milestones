@@ -5,7 +5,7 @@ import com.massivecraft.massivecore.store.SenderColl;
 public class MPlayerColl extends SenderColl<MPlayer>
 {
     // -------------------------------------------- //
-    // INSTANCE & CONSTRUCT
+    // INSTANCE
     // -------------------------------------------- //
 
     private static MPlayerColl i = new MPlayerColl();

@@ -6,7 +6,7 @@ import com.massivecraft.massivecore.store.Coll;
 public class MConfColl extends Coll<MConf>
 {
     // -------------------------------------------- //
-    // INSTANCE & CONSTRUCT
+    // INSTANCE
     // -------------------------------------------- //
 
     private static MConfColl i = new MConfColl();

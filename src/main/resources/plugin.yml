@@ -9,6 +9,7 @@ permissions:
   # THE REAL NODES
   # -------------------------------------------- #
   milestones.basecommand: {description: use milestones base command, default: false}
+  milestones.open: {description: open the milestones gui, default: false}
 
   # -------------------------------------------- #
   # STAR NOTATION
@@ -16,6 +17,7 @@ permissions:
   milestones.*:
     children:
       milestones.basecommand: true
+      milestones.open: true
 
   # -------------------------------------------- #
   # KITS
@@ -24,3 +26,12 @@ permissions:
     default: op
     children:
       milestones.*: true
+  milestones.kit.rank0:
+    default: false
+    children:
+      milestones.basecommand: true
+      milestones.open: true
+  milestones.kit.default:
+    default: true
+    children:
+      milestones.kit.rank0: true
